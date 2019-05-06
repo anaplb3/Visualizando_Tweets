@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tweets </title>
+    <link rel="stylesheet" href="/templates/css/bootstrap.css">
+</head>
+<body>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <th> User </th>
+                <th> Tweet </th>
+            </thead>
+
+            {% for tweet in tweets %}
+
+            <tr>
+                <td> {{ tweet.user }}</td>
+                <td> {{ tweet.text }} </td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+
+    <h3> <a href="/key" target="_self"> Pesquisar novamente </a> </h3>
+
+</body>
+</html>
