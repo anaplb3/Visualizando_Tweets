@@ -2,18 +2,37 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Palavra </title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
-<body>
+<body class="bg-primary">
+    <div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
+        <h1>Pesquisando Tweets</h1>
+        <p> Pesquise tweets com base em uma palavra chave!</p> 
+    </div>
+              
     <form action="/keyword" method="post">
+        <div class="container-fluid">
+           
+            <div class="form-group">
+                <label for="keyword" class="col-form-label"> Palavra-chave </label>
+                <input class="form-control" id="keyword" name="keyword" type="text">
+            </div>
+        
+            <div class="form-group">
+                <label for="language" class="col-form-label"> Idioma </label>
+                <input class="form-control" id="language" name="language" type="text">
+            </div>
 
-        <label for="keyword"> Palavra-chave </label>
-        <input id="keyword" name="keyword" type="text">
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-light mb-2"> Pesquisar tweets! </button>
+            </div>
 
-        <label for="language"> Idioma </label>
-        <input id="language" name="language" type="text">
-
-        <button type="submit"> Pesquisar tweets! </button>
+             
+        
+        </div>
+        
     </form>
 </body>
 </html>

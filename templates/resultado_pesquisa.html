@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title> Tweets </title>
-    <link rel="stylesheet" href="/templates/css/bootstrap.css">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
 <body>
+    <div class="container-fluid">
+        
+        <div class="table-responsive">
+            
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <th class="text-center"> User </th>
+                    <th class="text-center"> Tweet </th>
+                </thead>
 
-    <div class="container">
-        <table class="table">
-            <thead>
-                <th> User </th>
-                <th> Tweet </th>
-            </thead>
+                {% for tweet in tweets %}
 
-            {% for tweet in tweets %}
+                <tr>
+                    <td> {{ tweet.user }}</td>
+                    <td> {{ tweet.text }} </td>
+                </tr>
 
-            <tr>
-                <td> {{ tweet.user }}</td>
-                <td> {{ tweet.text }} </td>
-            </tr>
+                {% endfor %}
+            
+            </table>
+        
+        </div>
 
-            {% endfor %}
-        </table>
+
+        <h3 class="text-center"> <a href="/key" target="_self"> Pesquisar novamente </a> </h3>
     </div>
 
-    <h3> <a href="/key" target="_self"> Pesquisar novamente </a> </h3>
+    
 
 </body>
 </html>

@@ -7,7 +7,7 @@ conexao = TweetConnection()
 
 @app.route("/")
 def hello():
-    return "hello world!!"
+    return render_template("pesquisa.html")
 
 @app.route("/key")
 def pesquisa():
