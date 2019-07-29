@@ -24,6 +24,7 @@ def mostrando_resultados():
         palavra_chave = request.args.get("keyword")
         idioma = request.args.get("language")
         tweetss = pegando_tweets(palavra_chave, idioma)
+        print(len(tweetss))
         return render_template("resultado_pesquisa.html", tweets=tweetss)
 
 

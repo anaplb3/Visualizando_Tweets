@@ -7,32 +7,38 @@
     <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
 <body class="bg-primary">
-    <div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
+
+    <div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0;padding-bottom:15px;padding-top:30px;">
+        <img src="{{ url_for('static', filename='img/twitter-logo.png') }}" class="img-fluid" alt="logo twitter" width="150px" height="150px" style="margin-bottom:2rem">
         <h1>Pesquisando Tweets</h1>
         <p> Pesquise tweets com base em uma palavra chave!</p> 
     </div>
-              
-    <form action="/keyword" method="post">
-        <div class="container-fluid">
-           
-            <div class="form-group">
-                <label for="keyword" class="col-form-label"> Palavra-chave </label>
-                <input class="form-control" id="keyword" name="keyword" type="text">
-            </div>
-        
-            <div class="form-group">
-                <label for="language" class="col-form-label"> Idioma </label>
-                <input class="form-control" id="language" name="language" type="text">
-            </div>
 
-            <div class="text-center">
-                <button type="submit" class="btn btn-outline-light mb-2"> Pesquisar tweets! </button>
-            </div>
+        <form action="/keyword" method="post">
+            <div class="container-fluid">
+            
+                <div class="form-group">
+                    <label for="keyword" class="col-form-label"> Palavra-chave </label>
+                    <input class="form-control" id="keyword" name="keyword" type="text">
+                </div>
 
-             
-        
-        </div>
-        
-    </form>
+            <div class="form-group">
+                    <label for="language"> Idioma </label>
+                    <select class="form-control" id="language" name="language">
+                    <option value="pt"> Português </option>
+                    <option value="en"> Inglês </option>
+                    <option value="es"> Espanhol </option>
+                    <option value="it"> Italiano </option>
+                    </select>
+                </div>
+
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-light mb-2"> Pesquisar tweets! </button>
+                </div>
+
+            </div>
+            
+        </form>
 </body>
 </html>
